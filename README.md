@@ -15,3 +15,23 @@ You can install Nest.js CLI globally by running:
 
 ```bash
 npm install -g @nestjs/cli
+
+## Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/CarlaCostea/task-tracker-backend.git
+   cd task-tracker-backend
+
+Install dependencies:
+
+```bash
+npm install
+
+Run the backend server:
+
+```bash
+npm run start
+
+The backend server will start on http://localhost:3000.
