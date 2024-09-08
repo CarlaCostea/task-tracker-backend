@@ -24,7 +24,6 @@ export class TasksController {
     @Query('completed') completed?: string,
   ) {
     const isCompleted = completed === 'true';
-    
     return this.tasksService.getAllTasks({ title, completed: isCompleted });
   }
 

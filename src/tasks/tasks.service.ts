@@ -10,7 +10,10 @@ export class TasksService {
     private taskRepository: Repository<Task>,
   ) {}
 
-  getAllTasks(filter?: { title?: string; completed?: boolean }): Promise<Task[]> {
+  getAllTasks(filter?: {
+    title?: string;
+    completed?: boolean;
+  }): Promise<Task[]> {
     const query = this.taskRepository.createQueryBuilder('task');
 
     if (filter?.title) {
@@ -18,7 +21,9 @@ export class TasksService {
     }
 
     if (typeof filter?.completed === 'boolean') {
-      query.andWhere('task.completed = :completed', { completed: filter.completed });
+      query.andWhere('task.completed = :completed', {
+        completed: filter.completed,
+      });
     }
 
     return query.getMany();
@@ -31,7 +36,7 @@ export class TasksService {
     }
     return task;
   }
-  
+
   addTask(taskDto: { title: string; description: string }): Promise<Task> {
     const newTask = this.taskRepository.create({
       ...taskDto,
